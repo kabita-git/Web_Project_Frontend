@@ -5,8 +5,7 @@ import { Book, Upload, Users, Download } from "lucide-react";
 export default function TeacherDashboard() {
   return (
     <div className="flex bg-gray-100 min-h-screen">
-      <Sidebar />
-
+      <Sidebar role="teacher" />
       <div className="flex-1 p-6">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">

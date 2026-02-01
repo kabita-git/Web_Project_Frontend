@@ -5,8 +5,7 @@ import { BookOpen, FileText, Download, Bell } from "lucide-react";
 export default function StudentDashboard() {
   return (
     <div className="flex bg-gray-100 min-h-screen">
-      <Sidebar />
-
+      <Sidebar role="student" />
       <div className="flex-1 p-6">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
