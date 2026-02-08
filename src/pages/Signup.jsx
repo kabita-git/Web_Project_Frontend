@@ -21,7 +21,14 @@ export default function Signup() {
     }
 
     // store role temporarily (frontend-only)
-    localStorage.setItem("role", role.toLowerCase());
+    const roleValue = role.toLowerCase();
+    localStorage.setItem("role", roleValue);
+
+    // store profile (name + email + role) so Profile page shows correct name
+    localStorage.setItem(
+      "profile",
+      JSON.stringify({ name: name.trim(), email: email.trim(), role: roleValue })
+    );
 
     navigate("/login");
   };

@@ -5,14 +5,16 @@ import { BookOpen, FileText, Download, Bell } from "lucide-react";
 export default function StudentDashboard() {
   return (
     <div className="flex bg-gray-100 min-h-screen">
-      <Sidebar role="student" />
+      <Sidebar role={localStorage.getItem("role") || "student"} />
       <div className="flex-1 p-6">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Student Dashboard</h1>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
+          <a href="/home">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
             Logout
           </button>
+          </a>
         </div>
 
         {/* Stats */}

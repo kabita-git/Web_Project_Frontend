@@ -4,6 +4,11 @@ import Signup from "./pages/Signup";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
 import HomePage from "./pages/HomePage.jsx";  
+import Profile from "./pages/Profile";
+import MyCourses from "./pages/MyCourses";
+import ManageUploads from "./pages/ManageUploads";
+import Downloads from "./pages/Downloads";
+
 export default function App(){
   return(
     <BrowserRouter>
@@ -12,6 +17,10 @@ export default function App(){
     <Route path="/signup" element={<Signup/>}/>
     <Route path="/teacher-dashboard" element={<TeacherDashboard/>}/>
     <Route path="/student-dashboard" element={<StudentDashboard/>}/>
+    <Route path="/profile" element={<Profile/>}/>
+    <Route path="/my-courses" element={<MyCourses/>}/>
+    <Route path="/manage-uploads" element={<ManageUploads/>}/>
+    <Route path="/downloads" element={<Downloads/>}/>
     <Route path="/home" element={<HomePage/>}/>
     <Route path="/" element={<HomePage/>}/>
   </Routes>

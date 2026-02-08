@@ -19,6 +19,8 @@ export default function Login() {
 
     // store role for demo (frontend only)
     localStorage.setItem("role", role);
+    // store logged-in email for demo/profile display
+    localStorage.setItem("loggedInEmail", email);
 
     // redirect based on role
     if (role === "student") navigate("/student-dashboard");
