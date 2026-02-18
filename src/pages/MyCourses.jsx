@@ -59,7 +59,7 @@ export default function MyCourses() {
       <div className="flex">
         <Sidebar role={role} />
         <div className="flex-1 p-8">
-        <h1 className="text-2xl font-bold mb-6">My Courses (Teacher)</h1>
+        <h1 className="text-2xl font-bold mb-6">My Courses </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div className="col-span-2">

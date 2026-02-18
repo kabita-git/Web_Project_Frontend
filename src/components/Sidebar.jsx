@@ -1,47 +1,50 @@
 import { LayoutDashboard, BookOpen, Upload, Download, User } from "lucide-react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar({ role }) {
   const effectiveRole = role || localStorage.getItem("role") || "student";
 
   return (
-    <div className="w-64 min-h-screen bg-blue-700 text-white p-5">
-      <h1 className="text-2xl font-bold mb-10">LMS</h1>
+    <div className="w-64 min-h-screen bg-slate-800 text-white p-5">
+      <h1 className="text-2xl font-bold mb-10">Study Zone</h1>
 
       <ul className="space-y-4">
         {/* Dashboard */}
-        <Link to={effectiveRole === "teacher" ? "/teacher-dashboard" : "/student-dashboard"} className="flex items-center gap-3 bg-blue-600 px-4 py-2 rounded-lg cursor-pointer">
+        <NavLink
+          to={effectiveRole === "teacher" ? "/teacher-dashboard" : "/student-dashboard"}
+          className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer ${isActive ? 'bg-slate-600' : 'hover:bg-slate-600'}`}
+        >
           <LayoutDashboard size={18} />
           <span>Dashboard</span>
-        </Link>
+        </NavLink>
 
         {/* My Courses */}
-        <Link to="/my-courses" className="flex items-center gap-3 px-4 py-2 hover:bg-blue-600 rounded-lg cursor-pointer">
+        <NavLink to="/my-courses" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer ${isActive ? 'bg-slate-600' : 'hover:bg-slate-600'}`}>
           <BookOpen size={18} />
           <span>My Courses</span>
-        </Link>
+        </NavLink>
 
         {/* Teacher Only */}
         {effectiveRole === "teacher" && (
-          <Link to="/manage-uploads" className="flex items-center gap-3 px-4 py-2 hover:bg-blue-600 rounded-lg cursor-pointer">
+          <NavLink to="/manage-uploads" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer ${isActive ? 'bg-slate-600' : 'hover:bg-slate-600'}`}>
             <Upload size={18} />
             <span>Manage Uploads</span>
-          </Link>
+          </NavLink>
         )}
 
         {/* Student Only */}
         {effectiveRole === "student" && (
-          <Link to="/downloads" className="flex items-center gap-3 px-4 py-2 hover:bg-blue-600 rounded-lg cursor-pointer">
+          <NavLink to="/downloads" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer ${isActive ? 'bg-slate-600' : 'hover:bg-slate-600'}`}>
             <Download size={18} />
             <span>Download</span>
-          </Link>
+          </NavLink>
         )}
 
         {/* Profile */}
-        <Link to="/profile" className="flex items-center gap-3 px-4 py-2 hover:bg-blue-600 rounded-lg cursor-pointer">
+        <NavLink to="/profile" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg cursor-pointer ${isActive ? 'bg-slate-600' : 'hover:bg-slate-600'}`}>
           <User size={18} />
           <span>Profile</span>
-        </Link>
+        </NavLink>
       </ul>
     </div>
   );
